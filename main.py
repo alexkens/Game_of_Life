@@ -4,15 +4,11 @@ from game import insert_life
 from game import BASE
 from game import create_grid
 
-import pygame
-import glob
 
-SIZE = WIDTH, HEIGHT = 150, 200  # the width and height of our screen
-FPS = 20  # Frames per second
 
 
 if __name__ == '__main__':
-    grid = create_grid()
+    """grid = create_grid()
     print_grid(grid, BASE)
 
     l = [44, 45, 46]
@@ -22,4 +18,6 @@ if __name__ == '__main__':
 
     for i in range(100):
         grid = play(grid)
-        print_grid(grid, BASE)
+        print_grid(grid, BASE)"""
+
+
