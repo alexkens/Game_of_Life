@@ -1,4 +1,4 @@
-from game import play
+from game import step
 from game import print_grid
 from game import insert_life
 from game import BASE
