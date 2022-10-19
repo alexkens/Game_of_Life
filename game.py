@@ -1,17 +1,41 @@
+"""
+This module implements the mathematical game "Game of Life" by Conway.
+
+Functions:  create_grid()
+            print_grid(grid, base)
+            insert_life(grid, l)
+            step(grid)
+            neighbours(cell, grid)
+Constants:  ALIVE, DEAD, BASE
+"""
+
 
 # cell constants
-#NOTHING = 0
 ALIVE = 1
 DEAD = 0
-
 BASE = 10
 
 
 def create_grid():
+    """
+    Returns a newly created array of zeros based.
+
+    :return: grid
+    :rtype: int[]
+    """
     return [0 for i in range(BASE*BASE)]
 
 
 def print_grid(grid, base):
+    """
+    Prints the grid into the Terminal nicely.
+
+    :param grid: The int array that represents the grid of dead or living cells.
+    :type grid: list
+    :param base: Base on which the size of the grid depends.
+    :type base: int
+    """
+
     print("My Grid")
 
     print("------------")
@@ -31,6 +55,13 @@ def print_grid(grid, base):
 
 
 def insert_life(grid, l):
+    """
+    Inserts the value from the list l into the grid.
+
+    :param grid:
+    :param l:
+    :return:
+    """
     for e in l:
         grid[e] = 1
     return grid
@@ -40,7 +71,7 @@ def insert_life(grid, l):
 # R2 alive cell > 3 neighbours --> dead
 # R3 alive cell == 2,3 neighbours --> alive
 # R4 dead cell == 3 neighbours --> alive
-def play(grid):
+def step(grid):
 
     updated_grid = grid.copy()
 
@@ -83,7 +114,10 @@ def neighbours(cell, grid):
 
 
 if __name__ == '__main__':
-    grid = create_grid()
+
+    print(type([2, 3, 4]))
+
+    """grid = create_grid()
     print_grid(grid, BASE)
 
     l = [44, 45, 46]
@@ -92,5 +126,5 @@ if __name__ == '__main__':
     print_grid(grid, BASE)
 
     for i in range(15):
-        grid = play(grid)
-        print_grid(grid, BASE)
+        grid = step(grid)
+        print_grid(grid, BASE)"""
