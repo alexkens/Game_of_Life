@@ -2,7 +2,7 @@ import pygame
 import sys
 import time
 
-from game import play
+from game import step
 from game import print_grid
 from game import insert_life
 from game import BASE
@@ -69,7 +69,7 @@ while True:
     print(i)"""
 
     step(grid, moving_sprites)
-    grid = play(grid)
+    grid = step(grid)
 
     screen.fill((0, 255, 255))
     moving_sprites.draw(screen)
