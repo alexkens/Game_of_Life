@@ -10,11 +10,10 @@ from game import create_grid
 from game import ALIVE, DEAD
 
 
-
 class Rectangle(pygame.sprite.Sprite):
     def __init__(self, pos_x, pos_y):
         super().__init__()
-        self.image = pygame.Surface([50, 50])
+        self.image = pygame.Surface([100, 100])
         self.image.fill((0, 0, 0))
         self.rect = self.image.get_rect()
         self.rect.topleft = [pos_x, pos_y]
@@ -22,9 +21,9 @@ class Rectangle(pygame.sprite.Sprite):
 
 # Grid Setup
 grid = create_grid()
-l1 = [0, 2, 4, 13, 21]
+l1 = [15, 26, 34, 35, 36]
 insert_life(grid, l1)
-#grid = play(grid)
+# grid = play(grid)
 print_grid(grid, BASE)
 
 # General Setup
@@ -40,7 +39,8 @@ pygame.display.set_caption("Sprite Animation")
 # Creating the sprites and groups
 moving_sprites = pygame.sprite.Group()
 
-def step(grid, moving_sprites):
+
+def pygame_step(grid, moving_sprites):
     moving_sprites.empty()
     for i in range(100):
         if grid[i] == ALIVE:
@@ -68,7 +68,7 @@ while True:
         j += 1
     print(i)"""
 
-    step(grid, moving_sprites)
+    pygame_step(grid, moving_sprites)
     grid = step(grid)
 
     screen.fill((0, 255, 255))
