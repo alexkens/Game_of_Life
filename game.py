@@ -103,7 +103,7 @@ def neighbours(cell, grid):
     l = up_row + in_row + low_row
 
     for e in l:
-        if 0 < e < 100:
+        if 0 <= e < 100:
             if grid[e] == ALIVE:
                 cell_neighbours += 1
 
@@ -115,16 +115,16 @@ def neighbours(cell, grid):
 
 if __name__ == '__main__':
 
-    print(type([2, 3, 4]))
-
-    """grid = create_grid()
+    grid = create_grid()
     print_grid(grid, BASE)
 
     l = [44, 45, 46]
     l1 = [44, 45, 46, 54, 56, 64, 65, 66]
-    insert_life(grid, l1)
+    insert_life(grid, l)
     print_grid(grid, BASE)
 
     for i in range(15):
         grid = step(grid)
-        print_grid(grid, BASE)"""
+        print_grid(grid, BASE)
+
+
